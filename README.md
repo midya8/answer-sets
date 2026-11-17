@@ -1,6 +1,6 @@
 # Answer sets
 
-StableLab checks answer-set semantics for small, supplied normal logic programs.
+This implementation checks answer-set semantics for small, supplied normal logic programs.
 It has no runtime dependencies.
 Inspect every candidate, every Gelfond-Lifschitz reduct, synchronous derivation
 round, rule violation, support and nonempty unfounded subset. A separate checker
