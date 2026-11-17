@@ -1,4 +1,4 @@
-# StableLab
+# Answer sets
 
 StableLab checks answer-set semantics for small, supplied normal logic programs.
 It has no runtime dependencies.
@@ -93,7 +93,7 @@ probabilities. This implements established finite methods, not a new algorithm.
 
 ## Strong equivalence: replacement under rule contexts
 
-The [safe-replacement inspector](https://midya8.github.io/stablelab/equivalence.html) compares every finite SE interpretation and supplies a concrete positive-normal context when two modules differ. Equal stable families, even with equal classical models, are not enough. Eleven controls include that exact failure and a cycle-context witness.
+The [safe-replacement inspector](https://midya8.github.io/answer-sets/equivalence.html) compares every finite SE interpretation and supplies a concrete positive-normal context when two modules differ. Equal stable families, even with equal classical models, are not enough. Eleven controls include that exact failure and a cycle-context witness.
 
 The comparison accepts at most five atoms and 24 rules per side. It checks all 3ⁿ pairs, exports both augmented evidence families, and has an independent three-valued checker plus proper-subset stable-family reconstruction. Shared parsers/base checker and the fixed-vocabulary normal-context scope are explicit in [EQUIVALENCE.md](EQUIVALENCE.md).
 
@@ -107,6 +107,6 @@ Version 0.2.0 preserves the base eight-atom inspector. It introduces no paid API
 
 ## Uniform equivalence: replacement under fact inputs
 
-The [fact-input inspector](https://midya8.github.io/stablelab/uniform.html) separates ordinary, uniform and strong equivalence. Check every one of up to 32 fact contexts, all 243 SE/UE pairs, both augmented stable families and every candidate. When an input separates, the complete table certifies minimum cardinality, including controls requiring 0/1/2/3/4 facts. Eiter/Fink's normal-program counterexample agrees under every fact input but fails under a rule context.
+The [fact-input inspector](https://midya8.github.io/answer-sets/uniform.html) separates ordinary, uniform and strong equivalence. Check every one of up to 32 fact contexts, all 243 SE/UE pairs, both augmented stable families and every candidate. When an input separates, the complete table certifies minimum cardinality, including controls requiring 0/1/2/3/4 facts. Eiter/Fink's normal-program counterexample agrees under every fact input but fails under a rule context.
 
 A separate Python checker reconstructs all context candidates using model intersections and exhaustive proper-subset reduct models. Shared parsers and checked SE evidence are disclosed in [UNIFORM.md](UNIFORM.md). Two more CLI commands: `stablelab uniform comparison.json` and `stablelab verify-uniform proof.json`. Version 0.3.0 retains both earlier inspectors and adds no runtime dependency.
